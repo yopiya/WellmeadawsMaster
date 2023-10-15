@@ -126,6 +126,39 @@ Public Class Dashboard
 
         connection.Close()
 
+        ' สร้าง Bar Chart
+        Chart1.Series.Clear()
+        Chart1.Series.Add("Night Shifts")
+        Chart1.Series.Add("Day Shifts")
+
+        ' เพิ่มแท่ง Night Shift และกำหนดสีเป็นน้ำเงิน
+        Dim nightShiftPoint As New DataPoint()
+        nightShiftPoint.SetValueY(nightShiftCount)
+        nightShiftPoint.Color = Color.Blue
+        nightShiftPoint.AxisLabel = "Night  Day"
+        nightShiftPoint.Label = nightShiftCount.ToString() ' กำหนดจำนวนบนแท่ง
+        Chart1.Series("Night Shifts").Points.Add(nightShiftPoint)
+
+        ' เพิ่มแท่ง Day Shift และกำหนดสีเป็นส้ม
+        Dim dayShiftPoint As New DataPoint()
+        dayShiftPoint.SetValueY(dayShiftCount)
+        dayShiftPoint.Color = Color.Orange
+        dayShiftPoint.AxisLabel = ""
+        dayShiftPoint.Label = dayShiftCount.ToString() ' กำหนดจำนวนบนแท่ง
+        Chart1.Series("Day Shifts").Points.Add(dayShiftPoint)
+
+        ' กำหนดระยะห่างระหว่างแท่งในแกน X
+        Chart1.ChartAreas(0).AxisX.Title = "Shifts" ' กำหนดชื่อแกน X
+        Chart1.ChartAreas(0).AxisX.Interval = 1 ' ระยะห่างระหว่างแท่ง 1 หน่วย
+        Chart1.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Number ' ระยะห่างเป็นตัวเลข
+        Chart1.ChartAreas(0).AxisX.Minimum = 0 ' ค่าต่ำสุดในแกน X
+
+        Chart1.ChartAreas(0).AxisY.Title = "Number of Staff" ' กำหนดชื่อแกน Y
+        Chart1.ChartAreas(0).AxisY.Interval = 1
+        Chart1.ChartAreas(0).AxisY.IntervalType = DateTimeIntervalType.Number
+
+
+
 
     End Sub
 
