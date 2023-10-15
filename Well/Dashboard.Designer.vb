@@ -22,9 +22,12 @@ Partial Class Dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea16 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend16 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series16 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea17 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend17 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series17 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbl_Qpatienttoday = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -52,6 +55,14 @@ Partial Class Dashboard
         Me.Label10 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Process1 = New System.Diagnostics.Process()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -61,6 +72,9 @@ Partial Class Dashboard
         Me.Panel5.SuspendLayout()
         Me.Panel8.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -69,7 +83,7 @@ Partial Class Dashboard
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Panel1.Controls.Add(Me.lbl_Qpatienttoday)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(51, 72)
+        Me.Panel1.Location = New System.Drawing.Point(51, 56)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(171, 87)
         Me.Panel1.TabIndex = 0
@@ -105,7 +119,7 @@ Partial Class Dashboard
         Me.Panel2.Controls.Add(Me.lbl_staff)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Panel6)
-        Me.Panel2.Location = New System.Drawing.Point(242, 72)
+        Me.Panel2.Location = New System.Drawing.Point(242, 56)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(171, 87)
         Me.Panel2.TabIndex = 1
@@ -148,7 +162,7 @@ Partial Class Dashboard
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label8.Location = New System.Drawing.Point(64, 3)
+        Me.Label8.Location = New System.Drawing.Point(66, 1)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(54, 21)
         Me.Label8.TabIndex = 10
@@ -163,7 +177,7 @@ Partial Class Dashboard
         Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.Panel7)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(427, 72)
+        Me.Panel3.Location = New System.Drawing.Point(427, 56)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(200, 87)
         Me.Panel3.TabIndex = 2
@@ -211,7 +225,7 @@ Partial Class Dashboard
         Me.Panel7.Controls.Add(Me.Label9)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(191, 25)
+        Me.Panel7.Size = New System.Drawing.Size(200, 25)
         Me.Panel7.TabIndex = 9
         '
         'Label9
@@ -219,7 +233,7 @@ Partial Class Dashboard
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label9.Location = New System.Drawing.Point(76, 3)
+        Me.Label9.Location = New System.Drawing.Point(79, 1)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(41, 21)
         Me.Label9.TabIndex = 0
@@ -244,7 +258,7 @@ Partial Class Dashboard
         Me.Panel4.Controls.Add(Me.lblPay)
         Me.Panel4.Controls.Add(Me.Label11)
         Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Location = New System.Drawing.Point(643, 72)
+        Me.Panel4.Location = New System.Drawing.Point(643, 56)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(171, 87)
         Me.Panel4.TabIndex = 3
@@ -301,7 +315,7 @@ Partial Class Dashboard
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(356, 16)
+        Me.Label1.Location = New System.Drawing.Point(356, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(184, 45)
         Me.Label1.TabIndex = 7
@@ -311,7 +325,7 @@ Partial Class Dashboard
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label7)
-        Me.Panel5.Location = New System.Drawing.Point(51, 72)
+        Me.Panel5.Location = New System.Drawing.Point(51, 56)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(171, 25)
         Me.Panel5.TabIndex = 1
@@ -321,7 +335,7 @@ Partial Class Dashboard
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label7.Location = New System.Drawing.Point(57, 3)
+        Me.Label7.Location = New System.Drawing.Point(53, 1)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(74, 21)
         Me.Label7.TabIndex = 10
@@ -331,7 +345,7 @@ Partial Class Dashboard
         '
         Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.Panel8.Controls.Add(Me.Label10)
-        Me.Panel8.Location = New System.Drawing.Point(643, 72)
+        Me.Panel8.Location = New System.Drawing.Point(643, 56)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(171, 25)
         Me.Panel8.TabIndex = 9
@@ -349,19 +363,101 @@ Partial Class Dashboard
         '
         'Chart1
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        ChartArea16.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea16)
+        Legend16.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend16)
         Me.Chart1.Location = New System.Drawing.Point(51, 186)
         Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(362, 240)
+        Series16.ChartArea = "ChartArea1"
+        Series16.Legend = "Legend1"
+        Series16.Name = "Series1"
+        Me.Chart1.Series.Add(Series16)
+        Me.Chart1.Size = New System.Drawing.Size(362, 164)
         Me.Chart1.TabIndex = 10
         Me.Chart1.Text = "Chart1"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label2.Location = New System.Drawing.Point(176, 164)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(111, 16)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Staff Allocation"
+        '
+        'Chart2
+        '
+        ChartArea17.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea17)
+        Legend17.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend17)
+        Me.Chart2.Location = New System.Drawing.Point(427, 186)
+        Me.Chart2.Name = "Chart2"
+        Series17.ChartArea = "ChartArea1"
+        Series17.Legend = "Legend1"
+        Series17.Name = "Series1"
+        Me.Chart2.Series.Add(Series17)
+        Me.Chart2.Size = New System.Drawing.Size(387, 164)
+        Me.Chart2.TabIndex = 12
+        Me.Chart2.Text = "Chart2"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label12.Location = New System.Drawing.Point(562, 164)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(113, 16)
+        Me.Label12.TabIndex = 13
+        Me.Label12.Text = "Patien by Ward"
+        '
+        'Process1
+        '
+        Me.Process1.StartInfo.Domain = ""
+        Me.Process1.StartInfo.LoadUserProfile = False
+        Me.Process1.StartInfo.Password = Nothing
+        Me.Process1.StartInfo.StandardErrorEncoding = Nothing
+        Me.Process1.StartInfo.StandardOutputEncoding = Nothing
+        Me.Process1.StartInfo.UserName = ""
+        Me.Process1.SynchronizingObject = Me
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(51, 390)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(256, 173)
+        Me.DataGridView1.TabIndex = 14
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label14.Location = New System.Drawing.Point(125, 368)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(117, 16)
+        Me.Label14.TabIndex = 15
+        Me.Label14.Text = "New Patient List"
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(331, 390)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(483, 173)
+        Me.DataGridView2.TabIndex = 16
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label15.Location = New System.Drawing.Point(549, 368)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(147, 16)
+        Me.Label15.TabIndex = 17
+        Me.Label15.Text = "New Requisition List"
         '
         'Dashboard
         '
@@ -369,6 +465,13 @@ Partial Class Dashboard
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(890, 575)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Chart2)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel5)
@@ -396,6 +499,9 @@ Partial Class Dashboard
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -427,4 +533,12 @@ Partial Class Dashboard
     Friend WithEvents lblPay As Label
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Chart2 As DataVisualization.Charting.Chart
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Process1 As Process
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
 End Class
