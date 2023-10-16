@@ -431,5 +431,11 @@
       <DependentUpon>ProjectDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\387490059_2007052539671796_122566097641315469_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\387490059_2007052539671796_122566097641315469_n2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

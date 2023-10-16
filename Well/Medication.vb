@@ -238,9 +238,5 @@ Public Class Medication
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim newForm As New Dashboard() ' สร้างตัวแปรสำหรับฟอร์มใหม่
-        newForm.StartPosition = FormStartPosition.CenterScreen
-        newForm.Show() ' แสดงฟอร์มใหม่
-    End Sub
+
 End Class

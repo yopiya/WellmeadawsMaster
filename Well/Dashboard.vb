@@ -9,6 +9,10 @@ Public Class Dashboard
     Dim connection As New SqlConnection(connectionString)
 
     Protected Sub Load_New_Patient()
+
+
+
+
         connection.Open()
 
         Dim today As Date = Date.Today
@@ -40,6 +44,28 @@ Public Class Dashboard
 
             ' กำหนดข้อมูลใน DataGridView
             DataGridView2.DataSource = dataTable
+        End Using
+
+        ' SQL query
+        Dim sqlQuery2 As String = "SELECT TOP 1 DrugName FROM PharmaceuticalSupplies WHERE QuantityInStock < 6 ORDER BY QuantityInStock"
+
+        ' สร้าง SqlConnection
+        Using connection As New SqlConnection(connectionString)
+            ' เปิดการเชื่อมต่อ
+            connection.Open()
+
+            ' สร้าง SqlCommand
+            Using command As New SqlCommand(sqlQuery2, connection)
+                ' ดึงข้อมูลจากฐานข้อมูล
+                Dim result As Object = command.ExecuteScalar()
+
+                ' ตรวจสอบผลลัพธ์และกำหนดให้ Label.Text
+                If result IsNot Nothing Then
+                    Label17.Text = result.ToString()
+                Else
+                    Label17.Text = "No result"
+                End If
+            End Using
         End Using
 
         connection.Close()
@@ -128,6 +154,8 @@ Public Class Dashboard
         ' นำค่าที่นับได้แสดงใน Label
         lblPay.Text = countOccupiedBeds.ToString()
     End Sub
+
+
 
 
     Private Sub unpay()
