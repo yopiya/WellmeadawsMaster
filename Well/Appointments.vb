@@ -9,6 +9,11 @@ Public Class Appointments
     Dim sqlConnection As New SqlConnection(connectionString)
     Private Sub Appointments_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Load()
+
+    End Sub
+
+    Protected Sub Load()
         ' สร้าง query
         Dim query1 As String = "SELECT * FROM Appointments"
 
@@ -29,7 +34,6 @@ Public Class Appointments
 
         ' ปิดการเชื่อมต่อ
         sqlConnection.Close()
-
     End Sub
 
     Private Sub btnsearch_Click(sender As Object, e As EventArgs) Handles btnsearch.Click
@@ -98,7 +102,15 @@ Public Class Appointments
 
     Private Sub butAdd_Click(sender As Object, e As EventArgs) Handles butAdd.Click
 
-        Dim oDate As DateTime = Convert.ToDateTime(appointmentdate.Text)
+
+
+
+        Dim waitingDateString As String = appointmentdate.Value
+
+
+        Dim dateFormat As String = "dd/MM/yyyy"
+        Dim waitingDate As DateTime
+
 
 
         Try
@@ -106,8 +118,8 @@ Public Class Appointments
             Dim nextID As String = GetNextID()
 
             ' Create a SQL INSERT statement with the formatted patient Diagnosis
-            Dim sqlin As String = "INSERT INTO Appointments (AppointmentsID, PatientID, AppointmentsDate, WardID, Diagnosis, TreatmentPlan) " &
-                                  "VALUES('" & nextID & "','" & PatientIDtxt.Text & "', '" & oDate & "', '" & WardIDtxt.Text & "', '" & Diagnosistxt.Text & "', '" & TreatmentPlantxt.Text & "')"
+            Dim sqlin As String = "INSERT INTO Appointments (AppointmentID, PatientID, AppointmentDate, WardID, Diagnosis, TreatmentPlan) " &
+                                  "VALUES('" & nextID & "','" & PatientIDtxt.Text & "', '" & waitingDate & "', '" & WardIDtxt.Text & "', '" & Diagnosistxt.Text & "', '" & TreatmentPlantxt.Text & "')"
 
             Dim sqlCmd = sqlConnection.CreateCommand()
             sqlCmd.CommandText = sqlin
@@ -117,10 +129,13 @@ Public Class Appointments
 
             MessageBox.Show("บันทึกข้อมูลสำเร็จ")
         Catch ex As Exception
-            MessageBox.Show("เกิดข้อผิดพลาดในการบันทึกข้อมูล: " & ex.Message & oDate)
+            MessageBox.Show("เกิดข้อผิดพลาดในการบันทึกข้อมูล: " & ex.Message & waitingDate)
         Finally
             sqlConnection.Close()
         End Try
+
+        Load()
+
     End Sub
 
     Private Sub ButDelete_Click(sender As Object, e As EventArgs) Handles ButDelete.Click
@@ -160,5 +175,30 @@ Public Class Appointments
             ' Handle any exceptions and show an error message
             MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Dim newFormSChoPatien As ChoosPatien ' สร้างตัวแปรสำหรับฟอร์มใหม่
+        newFormSChoPatien = New ChoosPatien()
+        newFormSChoPatien.ShowDialog()
+        PatientIDtxt.Text = newFormSChoPatien.PatienID
+        TextBox1.Text = newFormSChoPatien.PatienName
+        TextBox2.Text = newFormSChoPatien.PatienLastname
+
+        PatientIDtxt.ReadOnly = True
+        TextBox1.ReadOnly = True
+        TextBox2.ReadOnly = True
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim newFormSChoPatien As ChooseWard ' สร้างตัวแปรสำหรับฟอร์มใหม่
+        newFormSChoPatien = New ChooseWard()
+        newFormSChoPatien.ShowDialog()
+        WardIDtxt.Text = newFormSChoPatien.PatientId
+        TextBox3.Text = newFormSChoPatien.PatientName
+
+
+        WardIDtxt.ReadOnly = True
+        TextBox3.ReadOnly = True
     End Sub
 End Class

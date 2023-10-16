@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Globalization
 
 Public Class InPatient
     Dim connectionString As String = "Data Source=144.24.38.124\SQLEXPRESS,1433;Initial Catalog=Project ;User Id=admin;Password=adminadminadmin"
@@ -94,25 +95,74 @@ Public Class InPatient
     End Function
 
     Private Sub butAdd_Click(sender As Object, e As EventArgs) Handles butAdd.Click
-        Try
-            ' Get the next available patient ID
-            Dim nextID As String = GetNextID()
+        ' Assuming the date format is "dd/MM/yyyy"
+        Dim waitingDateString As String = lblWaitingDate.Value
+        Dim datePlacedString As String = lblDatePlaced.Value
+        Dim expectedLeaveString As String = lblExpectedLeave.Value
+        Dim actualLeftString As String = lblActualLeft.Value
 
-            ' Create a SQL INSERT statement with the formatted patient ID
-            Dim sqlin As String = "INSERT INTO InPatients (AdmitID, PatientID, WardID, DatePlacedOnWaitingList, ExpectedDurationOfStay, DatePlacedInWard, DateExpectedToLeaveWard, ActualDatePatientLeftWard) " &
-                                  "VALUES('" & nextID & "','" & PatientIDtxt.Text & "', '" & WardIDtxt.Text & "', '" & DatePlacedtxt.Text & "', '" & DurationOfStaytxt.Text & "', '" & DatePlacedtxt.Text & "','" & ExpectedLeavetxt.Text & "','" & ActualLefttxt.Text & "')"
+        Dim dateFormat As String = "dd/MM/yyyy"
+        Dim waitingDate As DateTime
+        Dim datePlaced As DateTime
+        Dim expectedLeave As DateTime
+        Dim actualLeft As DateTime
 
-            Dim sqlCmd = sqlConnection.CreateCommand()
-            sqlCmd.CommandText = sqlin
+        If DateTime.TryParseExact(waitingDateString, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, waitingDate) AndAlso
+           DateTime.TryParseExact(datePlacedString, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, datePlaced) AndAlso
+           DateTime.TryParseExact(expectedLeaveString, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, expectedLeave) AndAlso
+           DateTime.TryParseExact(actualLeftString, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, actualLeft) Then
 
-            sqlConnection.Open()
-            sqlCmd.ExecuteNonQuery()
+            Try
+                ' Get the next available patient ID
+                Dim nextID As String = GetNextID()
 
-            MessageBox.Show("บันทึกข้อมูลสำเร็จ")
-        Catch ex As Exception
-            MessageBox.Show("เกิดข้อผิดพลาดในการบันทึกข้อมูล: " & ex.Message)
-        Finally
-            sqlConnection.Close()
-        End Try
+                ' Create a SQL INSERT statement with the formatted patient ID
+                Dim sqlin As String = "INSERT INTO InPatients (AdmitID, PatientID, WardID, DatePlacedOnWaitingList, ExpectedDurationOfStay, DatePlacedInWard, DateExpectedToLeaveWard, ActualDatePatientLeftWard) " &
+                                      "VALUES('" & nextID & "','" & PatientIDtxt.Text & "', '" & WardIDtxt.Text & "', '" & datePlaced.ToString("MM/dd/yyyy") & "', '" & lblDurationOfStay.Value & "', '" & datePlaced.ToString("MM/dd/yyyy") & "','" & expectedLeave.ToString("MM/dd/yyyy") & "','" & actualLeft.ToString("MM/dd/yyyy") & "')"
+
+                Dim sqlCmd = sqlConnection.CreateCommand()
+                sqlCmd.CommandText = sqlin
+
+                sqlConnection.Open()
+                sqlCmd.ExecuteNonQuery()
+
+                MessageBox.Show("บันทึกข้อมูลสำเร็จ")
+            Catch ex As Exception
+                MessageBox.Show("เกิดข้อผิดพลาดในการบันทึกข้อมูล: " & ex.Message)
+            Finally
+                sqlConnection.Close()
+            End Try
+        Else
+            MessageBox.Show("Invalid date format.")
+        End If
     End Sub
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Dim newFormSChoPatien As ChoosPatien ' สร้างตัวแปรสำหรับฟอร์มใหม่
+        newFormSChoPatien = New ChoosPatien()
+        newFormSChoPatien.ShowDialog()
+        PatientIDtxt.Text = newFormSChoPatien.PatienID
+        TextBox1.Text = newFormSChoPatien.PatienName
+        TextBox2.Text = newFormSChoPatien.PatienLastname
+
+        PatientIDtxt.ReadOnly = True
+        TextBox1.ReadOnly = True
+        TextBox2.ReadOnly = True
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim newFormSChoPatien As ChooseWard ' สร้างตัวแปรสำหรับฟอร์มใหม่
+        newFormSChoPatien = New ChooseWard()
+        newFormSChoPatien.ShowDialog()
+        WardIDtxt.Text = newFormSChoPatien.PatientId
+        TextBox3.Text = newFormSChoPatien.PatientName
+
+
+        WardIDtxt.ReadOnly = True
+        TextBox3.ReadOnly = True
+
+    End Sub
+
+
 End Class

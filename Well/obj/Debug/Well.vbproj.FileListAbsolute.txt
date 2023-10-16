@@ -110,3 +110,4 @@ C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Well.vbproj.CopyComp
 C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Wellmeadaws.exe
 C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Wellmeadaws.xml
 C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Wellmeadaws.pdb
+C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Wellmeadaws.ChooseWard.resources
