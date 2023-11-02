@@ -5,7 +5,7 @@ Imports System.Windows.Forms.DataVisualization.Charting
 
 Public Class Dashboard
 
-    Dim connectionString As String = "Data Source=144.24.38.124\SQLEXPRESS,1433;Initial Catalog=Project ;User Id=admin;Password=adminadminadmin"
+    Dim connectionString As String = "Data Source=124.121.233.223\SQLEXPRESS,1433;Initial Catalog=Project ;User Id=admin;Password=adminadminadmin"
     Dim connection As New SqlConnection(connectionString)
 
     Protected Sub Load_New_Patient()

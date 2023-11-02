@@ -5,7 +5,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Appointments
 
-    Dim connectionString As String = "Data Source=144.24.38.124\SQLEXPRESS,1433;Initial Catalog=Project ;User Id=admin;Password=adminadminadmin"
+    Dim connectionString As String = "Data Source=124.121.233.223\SQLEXPRESS,1433;Initial Catalog=Project ;User Id=admin;Password=adminadminadmin"
     Dim sqlConnection As New SqlConnection(connectionString)
     Private Sub Appointments_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -15,7 +15,7 @@ Public Class Appointments
 
     Protected Sub Load()
         ' สร้าง query
-        Dim query1 As String = "SELECT * FROM Appointments"
+        Dim query1 As String = "SELECT * FROM AppointmentView" 'รอพี๋โยสร้างViewใหม่
 
         ' สร้าง command
         Dim command1 As New SqlCommand(query1, sqlConnection)
@@ -34,6 +34,14 @@ Public Class Appointments
 
         ' ปิดการเชื่อมต่อ
         sqlConnection.Close()
+
+        TextBox1.ReadOnly = True
+        TextBox2.ReadOnly = True
+        TextBox3.ReadOnly = True
+        PatientIDtxt.ReadOnly = True
+        WardIDtxt.ReadOnly = True
+        WardIDtxt.ReadOnly = True
+
     End Sub
 
     Private Sub btnsearch_Click(sender As Object, e As EventArgs) Handles btnsearch.Click
@@ -46,10 +54,10 @@ Public Class Appointments
 
             If String.IsNullOrWhiteSpace(searchText) Then
                 ' If the search box is empty, retrieve all patient records
-                selectQuery = "SELECT * FROM Appointments"
+                selectQuery = "SELECT * FROM AppointmentView" 'AppointmentView
             Else
                 ' If a search term is entered, filter by FirstName, LastName, or Tel
-                selectQuery = "SELECT * FROM Appointments WHERE AppointmentsID LIKE @SearchText OR PatientID LIKE @SearchText OR AppointmentDate LIKE @SearchText OR WardID LIKE @SearchText OR Diagnosis LIKE @SearchText OR TreatmentPlan LIKE @SearchText"
+                selectQuery = "SELECT * FROM AppointmentView WHERE AppointmentID LIKE @SearchText OR PatientID LIKE @SearchText OR FirstName LIKE @SearchText OR LastName LIKE @SearchText OR AppointmentDate LIKE @SearchText OR WardID LIKE @SearchText OR WardName LIKE @SearchText OR Diagnosis LIKE @SearchText OR TreatmentPlan LIKE @SearchText"
             End If
 
             Using connection As New SqlConnection(connectionString)
@@ -102,16 +110,9 @@ Public Class Appointments
 
     Private Sub butAdd_Click(sender As Object, e As EventArgs) Handles butAdd.Click
 
-
-
-
         Dim waitingDateString As String = appointmentdate.Value
-
-
         Dim dateFormat As String = "dd/MM/yyyy"
         Dim waitingDate As DateTime
-
-
 
         Try
             ' Get the next available patient ID
@@ -127,9 +128,9 @@ Public Class Appointments
             sqlConnection.Open()
             sqlCmd.ExecuteNonQuery()
 
-            MessageBox.Show("บันทึกข้อมูลสำเร็จ")
+            MessageBox.Show("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
-            MessageBox.Show("เกิดข้อผิดพลาดในการบันทึกข้อมูล: " & ex.Message & waitingDate)
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             sqlConnection.Close()
         End Try
@@ -138,43 +139,139 @@ Public Class Appointments
 
     End Sub
 
-    Private Sub ButDelete_Click(sender As Object, e As EventArgs) Handles ButDelete.Click
+    Private Sub butEdit_Click(sender As Object, e As EventArgs) Handles butEdit.Click
         Try
-            ' Check if any rows are selected in the DataGridView
-            If DataGridView1.SelectedRows.Count > 0 Then
+            ' Check if only one row is selected in the DataGridView
+            If DataGridView1.SelectedRows.Count = 1 Then
                 ' Get the selected row
                 Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
 
                 ' Retrieve the unique identifier (e.g., a primary key) from the selected row
-                Dim primaryKeyValue As String = selectedRow.Cells("PatientID").Value.ToString()
+                Dim primaryKeyValue As String = selectedRow.Cells("AppointmentID").Value.ToString()
 
-                ' Create a SQL DELETE statement
-                Dim deleteQuery As String = "DELETE FROM Patients WHERE PatientID = @PrimaryKey"
+                ' Create a SQL UPDATE statement
+                Dim updateQuery As String = "UPDATE Appointments SET PatientID = @PatientID,
+                                                  AppointmentDate = @AppointmentDate,
+                                                  WardID = @WardID,
+                                                  Diagnosis = @Diagnosis,
+                                                  TreatmentPlan = @TreatmentPlan
+                                                  WHERE AppointmentID = @PrimaryKey"
 
-                ' Create a SqlConnection and SqlCommand
                 Using connection As New SqlConnection(connectionString)
-                    Using command As New SqlCommand(deleteQuery, connection)
-                        ' Add a parameter for the primary key value
+                    Using command As New SqlCommand(updateQuery, connection)
+                        ' Add parameters for the primary key and TextBox values
                         command.Parameters.AddWithValue("@PrimaryKey", primaryKeyValue)
+                        command.Parameters.AddWithValue("@PatientID", PatientIDtxt.Text)
+                        command.Parameters.AddWithValue("@AppointmentDate", appointmentdate.Value.ToString("yyyy-MM-dd"))
+                        command.Parameters.AddWithValue("@WardID", WardIDtxt.Text)
+                        command.Parameters.AddWithValue("@Diagnosis", Diagnosistxt.Text)
+                        command.Parameters.AddWithValue("@TreatmentPlan", TreatmentPlantxt.Text)
 
-                        ' Open the database connection
+                        ' Add more parameters for other columns as needed
+
                         connection.Open()
-
-                        ' Execute the DELETE query
                         command.ExecuteNonQuery()
-
-                        ' Close the database connection
                         connection.Close()
                     End Using
                 End Using
 
-                ' Remove the selected row from the DataGridView
-                DataGridView1.Rows.Remove(selectedRow)
+                ' Inform the user that changes have been saved
+                MessageBox.Show("Edited successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Load()
+            ElseIf DataGridView1.SelectedRows.Count > 1 Then
+                MessageBox.Show("Please select only one row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Please select a row to edit.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             ' Handle any exceptions and show an error message
             MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub ButDelete_Click(sender As Object, e As EventArgs) Handles ButDelete.Click
+        Try
+            ' Check if any rows are selected in the DataGridView
+            If DataGridView1.SelectedRows.Count > 0 Then
+                ' Ask the user to confirm the deletion
+                Dim result As DialogResult = MessageBox.Show("Do you want to delete the selected row(s)?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                If result = DialogResult.Yes Then
+                    ' Create a list to store the selected primary key values
+                    Dim selectedKeys As New List(Of String)
+
+                    ' Collect the selected primary key values
+                    For Each selectedRow As DataGridViewRow In DataGridView1.SelectedRows
+                        Dim primaryKeyValue As String = selectedRow.Cells("AppointmentID").Value.ToString()
+                        selectedKeys.Add(primaryKeyValue)
+                    Next
+
+                    ' Create a SQL DELETE statement
+                    Dim deleteQuery As String = "DELETE FROM Appointments WHERE AppointmentID = @PrimaryKey"
+
+                    ' Create a SqlConnection and SqlCommand
+                    Using connection As New SqlConnection(connectionString)
+                        Using command As New SqlCommand(deleteQuery, connection)
+                            ' Add a parameter for the primary key value
+                            command.Parameters.Add("@PrimaryKey", SqlDbType.VarChar)
+
+                            connection.Open()
+
+                            ' Iterate through the list of selected primary keys and delete rows
+                            For Each key As String In selectedKeys
+                                command.Parameters("@PrimaryKey").Value = key
+                                command.ExecuteNonQuery()
+
+                                ' Remove the selected row from the DataGridView
+                                Dim selectedRow As DataGridViewRow = DataGridView1.Rows.Cast(Of DataGridViewRow)().Where(Function(r) r.Cells("AppointmentID").Value.ToString() = key).FirstOrDefault()
+                                If selectedRow IsNot Nothing Then
+                                    DataGridView1.Rows.Remove(selectedRow)
+                                End If
+                            Next
+
+                            connection.Close()
+                        End Using
+                    End Using
+
+                    MessageBox.Show("Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Load()
+                End If
+            Else
+                MessageBox.Show("Please select rows to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        Catch ex As Exception
+            ' Handle any exceptions and show an error message
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        If e.RowIndex >= 0 AndAlso DataGridView1.SelectedRows.Count > 0 Then
+
+            Dim selectedRow = DataGridView1.SelectedRows(0)
+            Dim cell0Value As String = selectedRow.Cells(0).Value.ToString() ' AppointmentID
+            Dim cell1Value As String = selectedRow.Cells(1).Value.ToString() ' PatientID
+            Dim cell2Value As String = selectedRow.Cells(2).Value.ToString() ' FirstName
+            Dim cell3Value As String = selectedRow.Cells(3).Value.ToString() ' LastName
+            Dim cell4Value As String = selectedRow.Cells(4).Value.ToString() ' AppointmentDate
+            Dim cell5Value As String = selectedRow.Cells(5).Value.ToString() ' WardID
+            Dim cell6Value As String = selectedRow.Cells(6).Value.ToString() ' WardName
+            Dim cell7Value As String = selectedRow.Cells(7).Value.ToString() ' Diagnosis
+            Dim cell8Value As String = selectedRow.Cells(8).Value.ToString() ' TreatmentPlan
+
+            'ให้สร้างพี่โย View ที่แสดงข้อมูลเรียงตามนี้ AppointmentID, PatientID, FirstName, LastName, WardID, WardName, AppointmentDate, Diagnosis, TreatmentPlan
+            'เสร็จแล้วมาลบที่เป็นคอมเมนให้ใช้งานได้
+
+            PatientIDtxt.Text = cell1Value
+            TextBox1.Text = cell2Value
+            TextBox2.Text = cell3Value
+            WardIDtxt.Text = cell5Value
+            TextBox3.Text = cell6Value
+            appointmentdate.Text = cell4Value
+            Diagnosistxt.Text = cell7Value
+            TreatmentPlantxt.Text = cell8Value
+        End If
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -196,7 +293,6 @@ Public Class Appointments
         newFormSChoPatien.ShowDialog()
         WardIDtxt.Text = newFormSChoPatien.PatientId
         TextBox3.Text = newFormSChoPatien.PatientName
-
 
         WardIDtxt.ReadOnly = True
         TextBox3.ReadOnly = True

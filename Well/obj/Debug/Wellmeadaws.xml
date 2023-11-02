@@ -242,5 +242,170 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member>
+<member name="T:Wellmeadaws.ProjectDataSet1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.AppointmentViewDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequisitionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.NonSurgicalSuppliesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.PharmaceuticalSuppliesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequitsitionPhamaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequisitionSurDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.AppointmentViewRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequisitionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.NonSurgicalSuppliesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.PharmaceuticalSuppliesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequitsitionPhamaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequisitionSurRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.AppointmentViewRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequisitionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.NonSurgicalSuppliesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.PharmaceuticalSuppliesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequitsitionPhamaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1.RequisitionSurRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.AppointmentViewTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.RequisitionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.NonSurgicalSuppliesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.PharmaceuticalSuppliesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.RequitsitionPhamaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.RequisitionSurTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(Wellmeadaws.ProjectDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(Wellmeadaws.ProjectDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(Wellmeadaws.ProjectDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager.UpdateAll(Wellmeadaws.ProjectDataSet1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Wellmeadaws.ProjectDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>

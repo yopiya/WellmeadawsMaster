@@ -8,7 +8,7 @@ Public Class ChooseWard
     Public PatientId As String
     Public PatientName As String
 
-    Dim connectionString As String = "Data Source=144.24.38.124\SQLEXPRESS,1433;Initial Catalog=Project;User Id=admin;Password=adminadminadmin"
+    Dim connectionString As String = "Data Source=124.121.233.223\SQLEXPRESS,1433;Initial Catalog=Project ;User Id=admin;Password=adminadminadmin"
     Dim sqlConnection As New SqlConnection(connectionString)
 
     ' Variable to store the selected PatientID
@@ -85,5 +85,7 @@ Public Class ChooseWard
         Catch ex As Exception
             MessageBox.Show("An error occurred while searching for patients: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+
     End Sub
 End Class

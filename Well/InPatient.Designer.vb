@@ -88,18 +88,18 @@ Partial Class InPatient
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(11, 314)
+        Me.DataGridView1.Location = New System.Drawing.Point(18, 342)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(941, 186)
+        Me.DataGridView1.Size = New System.Drawing.Size(1035, 238)
         Me.DataGridView1.TabIndex = 71
         '
         'ButDelete
         '
         Me.ButDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.ButDelete.Location = New System.Drawing.Point(510, 134)
+        Me.ButDelete.Location = New System.Drawing.Point(604, 133)
         Me.ButDelete.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.ButDelete.Name = "ButDelete"
         Me.ButDelete.Size = New System.Drawing.Size(64, 20)
@@ -110,7 +110,7 @@ Partial Class InPatient
         'butEdit
         '
         Me.butEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.butEdit.Location = New System.Drawing.Point(417, 134)
+        Me.butEdit.Location = New System.Drawing.Point(511, 133)
         Me.butEdit.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.butEdit.Name = "butEdit"
         Me.butEdit.Size = New System.Drawing.Size(64, 20)
@@ -121,7 +121,7 @@ Partial Class InPatient
         'butAdd
         '
         Me.butAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(143, Byte), Integer))
-        Me.butAdd.Location = New System.Drawing.Point(321, 134)
+        Me.butAdd.Location = New System.Drawing.Point(415, 133)
         Me.butAdd.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.butAdd.Name = "butAdd"
         Me.butAdd.Size = New System.Drawing.Size(64, 20)
@@ -183,7 +183,7 @@ Partial Class InPatient
         '
         Me.LabelPatients.AutoSize = True
         Me.LabelPatients.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.LabelPatients.Location = New System.Drawing.Point(411, 5)
+        Me.LabelPatients.Location = New System.Drawing.Point(509, 5)
         Me.LabelPatients.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabelPatients.Name = "LabelPatients"
         Me.LabelPatients.Size = New System.Drawing.Size(110, 30)
@@ -212,7 +212,7 @@ Partial Class InPatient
         'txtboxsearch
         '
         Me.txtboxsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtboxsearch.Location = New System.Drawing.Point(738, 134)
+        Me.txtboxsearch.Location = New System.Drawing.Point(860, 313)
         Me.txtboxsearch.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtboxsearch.Multiline = True
         Me.txtboxsearch.Name = "txtboxsearch"
@@ -227,20 +227,18 @@ Partial Class InPatient
         Me.Panel2.Controls.Add(Me.lblExpectedLeave)
         Me.Panel2.Controls.Add(Me.lblDatePlaced)
         Me.Panel2.Controls.Add(Me.lblWaitingDate)
-        Me.Panel2.Controls.Add(Me.txtboxsearch)
         Me.Panel2.Controls.Add(Me.LabelWaitingDate)
         Me.Panel2.Controls.Add(Me.LabelDurationOfStay)
-        Me.Panel2.Controls.Add(Me.btnsearch)
         Me.Panel2.Controls.Add(Me.LabelActualLeft)
         Me.Panel2.Controls.Add(Me.LabelDatePlaced)
         Me.Panel2.Controls.Add(Me.ButDelete)
         Me.Panel2.Controls.Add(Me.butEdit)
         Me.Panel2.Controls.Add(Me.butAdd)
         Me.Panel2.Controls.Add(Me.LabelExpectedLeave)
-        Me.Panel2.Location = New System.Drawing.Point(12, 123)
+        Me.Panel2.Location = New System.Drawing.Point(18, 123)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(941, 177)
+        Me.Panel2.Size = New System.Drawing.Size(1035, 177)
         Me.Panel2.TabIndex = 86
         '
         'lblDurationOfStay
@@ -289,7 +287,7 @@ Partial Class InPatient
         'btnsearch
         '
         Me.btnsearch.Image = CType(resources.GetObject("btnsearch.Image"), System.Drawing.Image)
-        Me.btnsearch.Location = New System.Drawing.Point(889, 134)
+        Me.btnsearch.Location = New System.Drawing.Point(1011, 313)
         Me.btnsearch.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.btnsearch.Name = "btnsearch"
         Me.btnsearch.Size = New System.Drawing.Size(36, 23)
@@ -308,16 +306,16 @@ Partial Class InPatient
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.PatientIDtxt)
         Me.Panel1.Controls.Add(Me.LabelPatientID)
-        Me.Panel1.Location = New System.Drawing.Point(11, 68)
+        Me.Panel1.Location = New System.Drawing.Point(18, 68)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(549, 49)
+        Me.Panel1.Size = New System.Drawing.Size(637, 49)
         Me.Panel1.TabIndex = 87
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(374, 17)
+        Me.Label3.Location = New System.Drawing.Point(432, 17)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(59, 13)
         Me.Label3.TabIndex = 88
@@ -326,7 +324,7 @@ Partial Class InPatient
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(212, 17)
+        Me.Label2.Location = New System.Drawing.Point(227, 18)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 87
@@ -334,16 +332,18 @@ Partial Class InPatient
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(434, 14)
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2.Location = New System.Drawing.Point(492, 14)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(133, 20)
         Me.TextBox2.TabIndex = 86
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(268, 14)
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Location = New System.Drawing.Point(283, 15)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(133, 20)
         Me.TextBox1.TabIndex = 85
         '
         'PictureBox1
@@ -361,7 +361,7 @@ Partial Class InPatient
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 16.2!)
-        Me.Label1.Location = New System.Drawing.Point(395, 35)
+        Me.Label1.Location = New System.Drawing.Point(503, 35)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 30)
@@ -376,9 +376,9 @@ Partial Class InPatient
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.LabelWardID)
         Me.Panel3.Controls.Add(Me.WardIDtxt)
-        Me.Panel3.Location = New System.Drawing.Point(565, 68)
+        Me.Panel3.Location = New System.Drawing.Point(660, 68)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(387, 49)
+        Me.Panel3.Size = New System.Drawing.Size(393, 49)
         Me.Panel3.TabIndex = 89
         '
         'PictureBox2
@@ -394,6 +394,7 @@ Partial Class InPatient
         '
         'TextBox3
         '
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox3.Location = New System.Drawing.Point(272, 13)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(110, 20)
@@ -412,13 +413,16 @@ Partial Class InPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 532)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(1073, 602)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.txtboxsearch)
         Me.Controls.Add(Me.LabelPatients)
+        Me.Controls.Add(Me.btnsearch)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "InPatient"

@@ -24,10 +24,15 @@ Partial Class Appointments
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Appointments))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PatientIDtxt = New System.Windows.Forms.TextBox()
+        Me.LabelPatientID = New System.Windows.Forms.Label()
         Me.WardIDtxt = New System.Windows.Forms.TextBox()
         Me.LabelWardID = New System.Windows.Forms.Label()
-        Me.LabelPatientID = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.appointmentdate = New System.Windows.Forms.DateTimePicker()
         Me.txtboxsearch = New System.Windows.Forms.TextBox()
@@ -44,20 +49,15 @@ Partial Class Appointments
         Me.LabelPatients = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.btnsearch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -76,8 +76,53 @@ Partial Class Appointments
         Me.Panel1.Location = New System.Drawing.Point(21, 58)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(517, 49)
+        Me.Panel1.Size = New System.Drawing.Size(634, 49)
         Me.Panel1.TabIndex = 91
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(428, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.TabIndex = 92
+        Me.Label3.Text = "Lastname :"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(213, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(58, 13)
+        Me.Label4.TabIndex = 91
+        Me.Label4.Text = "Firstname :"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2.Location = New System.Drawing.Point(488, 13)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(133, 20)
+        Me.TextBox2.TabIndex = 90
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Location = New System.Drawing.Point(269, 13)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(133, 20)
+        Me.TextBox1.TabIndex = 89
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(153, 11)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(32, 23)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 84
+        Me.PictureBox1.TabStop = False
         '
         'PatientIDtxt
         '
@@ -87,6 +132,16 @@ Partial Class Appointments
         Me.PatientIDtxt.Name = "PatientIDtxt"
         Me.PatientIDtxt.Size = New System.Drawing.Size(82, 20)
         Me.PatientIDtxt.TabIndex = 81
+        '
+        'LabelPatientID
+        '
+        Me.LabelPatientID.AutoSize = True
+        Me.LabelPatientID.Location = New System.Drawing.Point(2, 14)
+        Me.LabelPatientID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LabelPatientID.Name = "LabelPatientID"
+        Me.LabelPatientID.Size = New System.Drawing.Size(60, 13)
+        Me.LabelPatientID.TabIndex = 57
+        Me.LabelPatientID.Text = "Patient ID :"
         '
         'WardIDtxt
         '
@@ -107,23 +162,11 @@ Partial Class Appointments
         Me.LabelWardID.TabIndex = 59
         Me.LabelWardID.Text = "Ward ID :"
         '
-        'LabelPatientID
-        '
-        Me.LabelPatientID.AutoSize = True
-        Me.LabelPatientID.Location = New System.Drawing.Point(2, 14)
-        Me.LabelPatientID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LabelPatientID.Name = "LabelPatientID"
-        Me.LabelPatientID.Size = New System.Drawing.Size(60, 13)
-        Me.LabelPatientID.TabIndex = 57
-        Me.LabelPatientID.Text = "Patient ID :"
-        '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.appointmentdate)
-        Me.Panel2.Controls.Add(Me.txtboxsearch)
         Me.Panel2.Controls.Add(Me.LabelAppointmentDate)
-        Me.Panel2.Controls.Add(Me.btnsearch)
         Me.Panel2.Controls.Add(Me.LabelDiagnosis)
         Me.Panel2.Controls.Add(Me.Diagnosistxt)
         Me.Panel2.Controls.Add(Me.TreatmentPlantxt)
@@ -134,14 +177,14 @@ Partial Class Appointments
         Me.Panel2.Location = New System.Drawing.Point(21, 112)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(912, 110)
+        Me.Panel2.Size = New System.Drawing.Size(1030, 110)
         Me.Panel2.TabIndex = 90
         '
         'appointmentdate
         '
         Me.appointmentdate.CustomFormat = "yyyy-MM-dd"
         Me.appointmentdate.Location = New System.Drawing.Point(121, 18)
-        Me.appointmentdate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.appointmentdate.Margin = New System.Windows.Forms.Padding(2)
         Me.appointmentdate.Name = "appointmentdate"
         Me.appointmentdate.Size = New System.Drawing.Size(183, 20)
         Me.appointmentdate.TabIndex = 83
@@ -149,7 +192,7 @@ Partial Class Appointments
         'txtboxsearch
         '
         Me.txtboxsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtboxsearch.Location = New System.Drawing.Point(698, 64)
+        Me.txtboxsearch.Location = New System.Drawing.Point(850, 238)
         Me.txtboxsearch.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtboxsearch.Multiline = True
         Me.txtboxsearch.Name = "txtboxsearch"
@@ -169,7 +212,7 @@ Partial Class Appointments
         'btnsearch
         '
         Me.btnsearch.Image = CType(resources.GetObject("btnsearch.Image"), System.Drawing.Image)
-        Me.btnsearch.Location = New System.Drawing.Point(862, 63)
+        Me.btnsearch.Location = New System.Drawing.Point(1014, 237)
         Me.btnsearch.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.btnsearch.Name = "btnsearch"
         Me.btnsearch.Size = New System.Drawing.Size(38, 23)
@@ -180,7 +223,7 @@ Partial Class Appointments
         'LabelDiagnosis
         '
         Me.LabelDiagnosis.AutoSize = True
-        Me.LabelDiagnosis.Location = New System.Drawing.Point(362, 20)
+        Me.LabelDiagnosis.Location = New System.Drawing.Point(417, 20)
         Me.LabelDiagnosis.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabelDiagnosis.Name = "LabelDiagnosis"
         Me.LabelDiagnosis.Size = New System.Drawing.Size(59, 13)
@@ -190,16 +233,16 @@ Partial Class Appointments
         'Diagnosistxt
         '
         Me.Diagnosistxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Diagnosistxt.Location = New System.Drawing.Point(425, 18)
+        Me.Diagnosistxt.Location = New System.Drawing.Point(480, 18)
         Me.Diagnosistxt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Diagnosistxt.Name = "Diagnosistxt"
-        Me.Diagnosistxt.Size = New System.Drawing.Size(114, 20)
+        Me.Diagnosistxt.Size = New System.Drawing.Size(212, 20)
         Me.Diagnosistxt.TabIndex = 82
         '
         'TreatmentPlantxt
         '
         Me.TreatmentPlantxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TreatmentPlantxt.Location = New System.Drawing.Point(715, 18)
+        Me.TreatmentPlantxt.Location = New System.Drawing.Point(864, 18)
         Me.TreatmentPlantxt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TreatmentPlantxt.Name = "TreatmentPlantxt"
         Me.TreatmentPlantxt.Size = New System.Drawing.Size(141, 20)
@@ -208,7 +251,7 @@ Partial Class Appointments
         'butAdd
         '
         Me.butAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(143, Byte), Integer))
-        Me.butAdd.Location = New System.Drawing.Point(331, 66)
+        Me.butAdd.Location = New System.Drawing.Point(412, 67)
         Me.butAdd.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.butAdd.Name = "butAdd"
         Me.butAdd.Size = New System.Drawing.Size(64, 20)
@@ -219,7 +262,7 @@ Partial Class Appointments
         'LabelTreatmentPlan
         '
         Me.LabelTreatmentPlan.AutoSize = True
-        Me.LabelTreatmentPlan.Location = New System.Drawing.Point(634, 20)
+        Me.LabelTreatmentPlan.Location = New System.Drawing.Point(783, 20)
         Me.LabelTreatmentPlan.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabelTreatmentPlan.Name = "LabelTreatmentPlan"
         Me.LabelTreatmentPlan.Size = New System.Drawing.Size(82, 13)
@@ -229,7 +272,7 @@ Partial Class Appointments
         'butEdit
         '
         Me.butEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.butEdit.Location = New System.Drawing.Point(427, 66)
+        Me.butEdit.Location = New System.Drawing.Point(508, 67)
         Me.butEdit.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.butEdit.Name = "butEdit"
         Me.butEdit.Size = New System.Drawing.Size(64, 20)
@@ -240,7 +283,7 @@ Partial Class Appointments
         'ButDelete
         '
         Me.ButDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.ButDelete.Location = New System.Drawing.Point(520, 66)
+        Me.ButDelete.Location = New System.Drawing.Point(601, 67)
         Me.ButDelete.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.ButDelete.Name = "ButDelete"
         Me.ButDelete.Size = New System.Drawing.Size(64, 20)
@@ -251,12 +294,12 @@ Partial Class Appointments
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 228)
+        Me.DataGridView1.Location = New System.Drawing.Point(21, 273)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(912, 260)
+        Me.DataGridView1.Size = New System.Drawing.Size(1030, 300)
         Me.DataGridView1.TabIndex = 89
         '
         'LabelPatients
@@ -273,7 +316,7 @@ Partial Class Appointments
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(418, 3)
+        Me.Label1.Location = New System.Drawing.Point(501, 4)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(110, 30)
@@ -284,23 +327,12 @@ Partial Class Appointments
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Leelawadee UI", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(408, 29)
+        Me.Label2.Location = New System.Drawing.Point(491, 30)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(130, 25)
         Me.Label2.TabIndex = 93
         Me.Label2.Text = "Appointments"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(153, 11)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 23)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 84
-        Me.PictureBox1.TabStop = False
         '
         'Panel3
         '
@@ -311,57 +343,15 @@ Partial Class Appointments
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.LabelWardID)
         Me.Panel3.Controls.Add(Me.WardIDtxt)
-        Me.Panel3.Location = New System.Drawing.Point(542, 58)
+        Me.Panel3.Location = New System.Drawing.Point(659, 58)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(391, 49)
         Me.Panel3.TabIndex = 92
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(352, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
-        Me.Label3.TabIndex = 92
-        Me.Label3.Text = "Lastname :"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(190, 16)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 13)
-        Me.Label4.TabIndex = 91
-        Me.Label4.Text = "Firstname :"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(412, 13)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 90
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(246, 13)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 89
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(160, 13)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(32, 23)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 93
-        Me.PictureBox2.TabStop = False
-        '
         'TextBox3
         '
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox3.Location = New System.Drawing.Point(274, 14)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(110, 20)
@@ -376,13 +366,27 @@ Partial Class Appointments
         Me.Label5.TabIndex = 94
         Me.Label5.Text = "Ward Name :"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(160, 13)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(32, 23)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 93
+        Me.PictureBox2.TabStop = False
+        '
         'Appointments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(955, 499)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(1073, 602)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.txtboxsearch)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.btnsearch)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
@@ -394,11 +398,11 @@ Partial Class Appointments
         Me.Text = "Appointments"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.btnsearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

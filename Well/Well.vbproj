@@ -237,6 +237,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjectDataSet11.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Qualification.Designer.vb">
       <DependentUpon>Qualification.vb</DependentUpon>
     </Compile>
@@ -441,6 +446,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ProjectDataSet1.xsc">
+      <DependentUpon>ProjectDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectDataSet11.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectDataSet1.xss">
+      <DependentUpon>ProjectDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Resources\387490059_2007052539671796_122566097641315469_n.png" />
   </ItemGroup>
   <ItemGroup>
