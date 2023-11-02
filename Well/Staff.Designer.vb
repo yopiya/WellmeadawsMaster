@@ -46,7 +46,6 @@ Partial Class Staff
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtboxsearch1 = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnsearch = New System.Windows.Forms.PictureBox()
         Me.txtboxsearch = New System.Windows.Forms.TextBox()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -55,10 +54,12 @@ Partial Class Staff
         Me.DateTimeB = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnsearch = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.btnsearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.btnsearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -293,18 +294,6 @@ Partial Class Staff
         Me.Panel1.Size = New System.Drawing.Size(34, 24)
         Me.Panel1.TabIndex = 39
         '
-        'btnsearch
-        '
-        Me.btnsearch.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnsearch.Image = CType(resources.GetObject("btnsearch.Image"), System.Drawing.Image)
-        Me.btnsearch.Location = New System.Drawing.Point(0, 0)
-        Me.btnsearch.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.btnsearch.Name = "btnsearch"
-        Me.btnsearch.Size = New System.Drawing.Size(34, 24)
-        Me.btnsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnsearch.TabIndex = 0
-        Me.btnsearch.TabStop = False
-        '
         'txtboxsearch
         '
         Me.txtboxsearch.BackColor = System.Drawing.SystemColors.Window
@@ -410,12 +399,36 @@ Partial Class Staff
         Me.Button2.Text = "Work Experience"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'btnsearch
+        '
+        Me.btnsearch.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnsearch.Image = CType(resources.GetObject("btnsearch.Image"), System.Drawing.Image)
+        Me.btnsearch.Location = New System.Drawing.Point(0, 0)
+        Me.btnsearch.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.btnsearch.Name = "btnsearch"
+        Me.btnsearch.Size = New System.Drawing.Size(34, 24)
+        Me.btnsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnsearch.TabIndex = 0
+        Me.btnsearch.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(143, Byte), Integer))
+        Me.Button3.Location = New System.Drawing.Point(265, 278)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(120, 20)
+        Me.Button3.TabIndex = 47
+        Me.Button3.Text = "Log-in management"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'Staff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1073, 602)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel2)
@@ -434,9 +447,9 @@ Partial Class Staff
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.btnsearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.btnsearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -474,4 +487,5 @@ Partial Class Staff
     Friend WithEvents DateTimeB As DateTimePicker
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

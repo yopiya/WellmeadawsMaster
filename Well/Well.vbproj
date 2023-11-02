@@ -94,6 +94,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acc.Designer.vb">
+      <DependentUpon>Acc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Acc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="addPatianPharma.Designer.vb">
       <DependentUpon>addPatianPharma.vb</DependentUpon>
     </Compile>
@@ -125,6 +131,12 @@
     <Compile Include="ChooseStaffName.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChooseToEditAcc.Designer.vb">
+      <DependentUpon>ChooseToEditAcc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseToEditAcc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChooseWard.Designer.vb">
       <DependentUpon>ChooseWard.vb</DependentUpon>
     </Compile>
@@ -141,6 +153,12 @@
       <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBills.Designer.vb">
@@ -316,6 +334,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Acc.resx">
+      <DependentUpon>Acc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addPatianPharma.resx">
       <DependentUpon>addPatianPharma.vb</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +352,9 @@
     <EmbeddedResource Include="ChooseStaffName.resx">
       <DependentUpon>ChooseStaffName.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChooseToEditAcc.resx">
+      <DependentUpon>ChooseToEditAcc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChooseWard.resx">
       <DependentUpon>ChooseWard.vb</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBills.resx">
       <DependentUpon>FormBills.vb</DependentUpon>

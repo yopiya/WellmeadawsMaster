@@ -326,4 +326,9 @@ Public Class Staff
         newForm.Show() ' แสดงฟอร์มใหม่
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim newForm As New Acc() ' สร้างตัวแปรสำหรับฟอร์มใหม่
+        newForm.StartPosition = FormStartPosition.CenterScreen
+        newForm.Show() ' แสดงฟอร์มใหม่
+    End Sub
 End Class

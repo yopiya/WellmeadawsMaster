@@ -225,3 +225,6 @@ D:\SUT\2566-1\1101170\1101173\WellmeadawsMaster\WellmeadawsMaster\Well\obj\Debug
 D:\SUT\2566-1\1101170\1101173\WellmeadawsMaster\WellmeadawsMaster\Well\obj\Debug\Well.vbproj.GenerateResource.cache
 D:\SUT\2566-1\1101170\1101173\WellmeadawsMaster\WellmeadawsMaster\Well\obj\Debug\Well.vbproj.CoreCompileInputs.cache
 D:\SUT\2566-1\1101170\1101173\WellmeadawsMaster\WellmeadawsMaster\Well\obj\Debug\Well.vbproj.CopyComplete
+C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Wellmeadaws.Acc.resources
+C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Wellmeadaws.ChooseToEditAcc.resources
+C:\Users\ASUS\Source\Repos\WellmeadawsMaster\Well\obj\Debug\Wellmeadaws.Form1.resources
