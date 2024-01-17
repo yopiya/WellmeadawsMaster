@@ -30,3 +30,8 @@ This repository contains the database project for Wellmeadaws Hospital. The proj
    - **Open microsoft SQL Server Management**
    - **Choose dashboardgv2.sql to import data script to create a database**
    - **Click play to create a database**
+3. **Open GUI code to use**
+   ```bash
+   cd WellmeadawsMaster
+   ```
+   - **And open Well.sln file**
