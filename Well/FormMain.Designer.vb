@@ -23,9 +23,11 @@ Partial Class FormMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.dashboard = New System.Windows.Forms.ToolStripMenuItem()
         Me.STAFFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.STAFFALLOCATIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.wardnav = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,12 +47,10 @@ Partial Class FormMain
         Me.BILLSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PROFILEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StaffPanel = New System.Windows.Forms.Panel()
-        Me.dashboard = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -72,6 +72,19 @@ Partial Class FormMain
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1073, 99)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PictureBox1.Image = Global.Wellmeadaws.My.Resources.Resources._387490059_2007052539671796_122566097641315469_n2
+        Me.PictureBox1.Location = New System.Drawing.Point(2, 3)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(196, 59)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Panel1
         '
@@ -107,6 +120,13 @@ Partial Class FormMain
         Me.MenuStrip1.Size = New System.Drawing.Size(873, 34)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'dashboard
+        '
+        Me.dashboard.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dashboard.Name = "dashboard"
+        Me.dashboard.Size = New System.Drawing.Size(66, 34)
+        Me.dashboard.Text = "MAIN"
         '
         'STAFFToolStripMenuItem
         '
@@ -246,26 +266,6 @@ Partial Class FormMain
         Me.StaffPanel.Size = New System.Drawing.Size(1073, 602)
         Me.StaffPanel.TabIndex = 1
         '
-        'dashboard
-        '
-        Me.dashboard.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dashboard.Name = "dashboard"
-        Me.dashboard.Size = New System.Drawing.Size(66, 34)
-        Me.dashboard.Text = "MAIN"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox1.Image = Global.Wellmeadaws.My.Resources.Resources._387490059_2007052539671796_122566097641315469_n2
-        Me.PictureBox1.Location = New System.Drawing.Point(2, 3)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(196, 59)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -275,14 +275,14 @@ Partial Class FormMain
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "FormMain"
-        Me.Text = "Form1"
+        Me.Text = "Wellmeadows"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
